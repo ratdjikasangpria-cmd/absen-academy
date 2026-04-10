@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi Siswa Radtjika academy</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; display: flex; justify-content: center; padding: 50px; }
+        .container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); width: 350px; }
+        h2 { text-align: center; color: #333; }
+        label { display: block; margin-top: 10px; color: #666; }
+        input, select, button { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ddd; box-sizing: border-box; }
+        button { background-color: #28a745; color: white; border: none; margin-top: 20px; cursor: pointer; font-weight: bold; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Absen Ratdjika Academy</h2>
+    <form id="formAbsen">
+        <label>Nama Siswa:</label>
+        <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+
+        <label>Kelas:</label>
+        <select id="kelas">
+            <option value="10">Kelas 10</option>
+            <option value="11">Kelas 11</option>
+            <option value="12">Kelas 12</option>
+        </select>
+
+        <label>Keterangan:</label>
+        <select id="status">
+            <option value="Hadir">Hadir</option>
+            <option value="Izin">Izin</option>
+            <option value="Sakit">Sakit</option>
+        </select>
+
+        <button type="button" onclick="kirimAbsen()">Kirim Absen</button>
+    </form>
+</div>
+
+<script>
+    function kirimAbsen() {
+        const nama = document.getElementById('nama').value;
+        const status = document.getElementById('status').value;
+        if(nama) {
+            alert("Terima kasih " + nama + ", data absen '" + status + "' berhasil dikirim!");
+        } else {
+            alert("Mohon isi nama kamu dulu ya!");
+        }
+    }
+</script>
+
+</body>
+</html>
